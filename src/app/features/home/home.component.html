@@ -1,1 +1,5 @@
 <p>home works!</p>
+<button (click)="getTopTracks()">I TOPPE ALBUMI</button>
+<br>
+<input placeholder="Filter by Name" (keyup)="search($event)">
+<button (click)="getSearch(searchParam)" [disabled]=!searchParam>search</button>
