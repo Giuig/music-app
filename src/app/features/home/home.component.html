@@ -1,5 +1,29 @@
-<p>home works!</p>
-<button (click)="getTopTracks()">I TOPPE ALBUMI</button>
-<br>
-<input placeholder="Filter by Name" (keyup)="search($event)">
+<div class="container pt-5">
+  <span class="title">Top Tracks</span>
+  <div class="flex row center">
+    <div *ngFor="let track of topTracks?.tracks.track" class="col-lg-3 col-md-4 col-6">
+      <div class="flex direction-column musicard">
+        <img src="{{track.image[2]['#text']}}" alt="{{track.name}} - {{track.artist.name}}">
+        <div class="flex vertical-center center text-center h-100">
+          <span>{{track.name}} - {{track.artist.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="title">Top Artists</span>
+  <div class="flex row center">
+    <div *ngFor="let artist of topArtists?.artists.artist" class="col-lg-3 col-md-4 col-6">
+      <div class="flex direction-column musicard">
+        <img src="{{artist.image[2]['#text']}}" alt="{{artist.name}} - {{artist.name}}">
+        <div class="flex vertical-center center text-center h-100">
+          <span>{{artist.name}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <input placeholder="Filter by Name" (keyup)="search($event)">
 <button (click)="getSearch(searchParam)" [disabled]=!searchParam>search</button>
+-->
+

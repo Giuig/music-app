@@ -6,7 +6,8 @@
 @import "themes/global/bootstrap";
 
 //components
-
+@import "themes/components/header";
+@import "themes/components/home";
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $accent;}
+body { margin: 0; font-family: Nunito, "Nunito", sans-serif; background-color: $accent; color: $white}

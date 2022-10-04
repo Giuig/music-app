@@ -1,2 +1,11 @@
-<p>sono una bella navbar</p>
-
+<div class="header flex vertical-center px-3">
+  <div class="container flex between">
+    <div>
+      <h1 class="m-0">MusicDb</h1>
+    </div>
+    <div>
+      <input type="text" placeholder="search" (keyup)="search($event)">
+      <button (click)="getSearch(searchParam)" [disabled]="!searchParam">🔍</button>
+    </div>
+  </div>
+</div>

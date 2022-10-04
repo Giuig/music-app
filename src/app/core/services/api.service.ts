@@ -15,6 +15,10 @@ export class ApiService {
     return this.httpClient.get(this.baseUrl + '?method=chart.gettoptracks&api_key=' + this.API_KEY_LASTFM + '&format=json');
   }
 
+  getTopArtists(){
+    return this.httpClient.get(this.baseUrl + '?method=chart.gettopartists&api_key=' + this.API_KEY_LASTFM + '&format=json');
+  }
+
   getArtistSearch(search: string){
     return this.httpClient.get(this.baseUrl + '?method=artist.search&artist=' + search + '&api_key=' + this.API_KEY_LASTFM + '&format=json');
   }
@@ -25,5 +29,9 @@ export class ApiService {
 
   getTrackSearch(search:string){
     return this.httpClient.get(this.baseUrl + '?method=track.search&track=' + search + '&api_key=' + this.API_KEY_LASTFM + '&format=json')
+  }
+
+  getTopAlbumByArtist(aertistName: string){
+    return this.httpClient.get(this.baseUrl + '?method=artist.gettopalbums&artist=' + aertistName + '&api_key' + this.API_KEY_LASTFM + '&format=json')
   }
 }
