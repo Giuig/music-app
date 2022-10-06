@@ -8,6 +8,7 @@
 //components
 @import "themes/components/header";
 @import "themes/components/home";
+@import "themes/components/card";
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Nunito, "Nunito", sans-serif; background-color: $accent; color: $white}

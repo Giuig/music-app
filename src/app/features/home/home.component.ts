@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../../core/services/api.service";
 import {Subscription} from "rxjs";
 
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   topArtistsSubscription: Subscription | undefined;
   topArtists: any;
   topAlbumByArtistSubscription: any;
-  topAlbumByArtist: any;
+  topAlbumByArtistList: any = [];
 
   ngOnInit(): void {
     this.getTopTracks();
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
   getTopTracks() {
     this.topTracksSubscription = this.apiService.getTopTracks().subscribe(observer => {
         this.topTracks = {...observer};
-        console.log(this.topTracks);
+        console.log(this.topTracks)
       },
       () => {
       },
@@ -37,17 +37,6 @@ export class HomeComponent implements OnInit {
   getTopArtists() {
     this.topArtistsSubscription = this.apiService.getTopArtists().subscribe(observer => {
         this.topArtists = {...observer};
-        console.log(this.topArtists);
-      },
-      () => {
-      },
-    )
-  }
-
-  getTopAlbumByArtist(artistName: string) {
-    this.topAlbumByArtistSubscription = this.apiService.getAlbumSearch(artistName).subscribe(observer => {
-        this.topAlbumByArtist = {...observer};
-        console.log(this.topAlbumByArtist);
       },
       () => {
       },

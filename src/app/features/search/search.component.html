@@ -1,0 +1,16 @@
+<div class="container">
+  <span>Results for the search "{{searchParam}}"</span>
+  <br>
+  <span>Album matches</span>
+  <div>
+    <app-card [list]="albumSearchResults?.results.albummatches.album"></app-card>
+  </div>
+  <span>Artist matches</span>
+  <div>
+    <app-card [list]="artistSearchResults?.results.artistmatches.artist"></app-card>
+  </div>
+  <span>Track matches</span>
+  <div>
+    <app-card [list]="trackSearchResults?.results.trackmatches.track"></app-card>
+  </div>
+</div>

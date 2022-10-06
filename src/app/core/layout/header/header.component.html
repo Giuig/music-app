@@ -5,7 +5,7 @@
     </div>
     <div>
       <input type="text" placeholder="search" (keyup)="search($event)">
-      <button (click)="getSearch(searchParam)" [disabled]="!searchParam">🔍</button>
+      <button [disabled]="!searchParam" [routerLink]="'/search/param/' + searchParam">🔍</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,16 @@
+<div class="flex row center">
+  <div *ngFor="let data of list" class="col-lg-3 col-md-4 col-6">
+    <div class="flex direction-column musicard" *ngIf="data.image[3]['#text']">
+      <img src="{{data.image[3]['#text']}}" alt="{{data.name}} - {{data.artist?.name}}">
+      <div class="flex vertical-center center text-center h-100">
+        <span>{{data.name}} </span> &nbsp; <span *ngIf="data?.artist?.name"> - {{data?.artist?.name}}</span> <span *ngIf="!data?.artist?.name && data?.artist"> - {{data?.artist}}</span>
+      </div>
+    </div>
+    <div class="flex direction-column musicard" *ngIf="!data.image[3]['#text']">
+      <img src="https://www.homeiq.ae/wp-content/uploads/2015/11/default-placeholder-300x300.png" alt="{{data.name}} - {{data.artist?.name}}">
+      <div class="flex vertical-center center text-center h-100">
+        <span>{{data.name}} </span> &nbsp; <span *ngIf="data?.artist?.name"> - {{data?.artist?.name}}</span> <span *ngIf="!data?.artist?.name && data?.artist"> - {{data?.artist}}</span>
+      </div>
+    </div>
+  </div>
+</div>
